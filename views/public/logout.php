@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("location: ../../beranda.php");
+header("location: ../../index.html");
 ?>
