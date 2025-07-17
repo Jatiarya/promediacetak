@@ -1,0 +1,173 @@
+<!-- Link Konfigurasi Framework Tailwindcss -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- font awesome link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body {
+    scroll-behavior: smooth;
+}
+</style>
+
+<body class="scroll-smooth">
+    <nav
+        class="bg-[#005EFF] sticky top-2 flex items-center justify-between p-4 text-white w-[1140px] h-[60px] mx-auto rounded-[50px]">
+        <div class="logo">
+            <h1 class="font-bold">Pro Media Logo</h1>
+        </div>
+        <div class="nav-link flex gap-10">
+            <li class="list-none"><a href="beranda.php">Beranda</a></li>
+            <li class="list-none"><a href="#layanan">Layanan</a></li>
+            <li class="list-none"><a href="#testimoni">Testimoni</a></li>
+        </div>
+        <div class="btn">
+            <a href="login.php" class="font-medium">Masuk</a>
+            <a href="register.php" class="font-medium">Daftar</a>
+        </div>
+    </nav>
+    <main id="beranda"
+        class="beranda bg-[#005EFF] w-[1140px] h-[600px] mx-auto mt-10 rounded-[10px] flex justify-between p-10">
+        <div class="container flex justify-between items-center gap-10 ">
+            <div class="left-content ">
+                <h2 class="text-[30px] font-bold mb-4 text-white text-wrap">Jasa Print dan Percetakan <br> Melayani
+                    dengan
+                    Sepenuh
+                    Hati
+                </h2>
+                <a href="" class="mt-4 px-4 py-2 bg-[#FFA500] text-white rounded-[10px] hover:bg-blue-600">Pesan
+                    Jasa</a>
+            </div>
+            <div class="right-content">
+                <div class="container-card flex gap-4">
+                    <div class="card bg-white w-[125px] h-[363px] rounded-[10px]">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card bg-white w-[125px] h-[363px] rounded-[10px]">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card bg-white w-[125px] h-[363px] rounded-[10px]">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="layanan" class="layanan mx-auto flex flex-col items-center mt-10">
+        <h2 class="text-[30px] font-bold mb-4  text-wrap">Pilih Kebutuhan Jasamu</h2>
+        <p class="text-center w-[600px]">Pro Media Hadir sebagai solusi ketika anda terburu buru dan tidak ingin
+            mengantri ketika
+            ingin mencetak tugas
+            ataupun kebutuhan kerja anda</p>
+        <div class="grid grid-cols-4 gap-6 mt-10">
+            <div class="card w-[260px] h-[600px] bg-[#005EFF] p-4 rounded-[10px] flex flex-col items-center">
+                <h3 class="text-white font-bold text-[20px]">Print</h3>
+                <img src="img/print.jpg" alt="" class="w-[200px] h-[400px] object-cover rounded-[10px] mt-12">
+                <a href="" class="p-2 bg-[#FFA500] relative bottom-[-40px] rounded-[5px] items-center text-white">Pesan
+                    Jasa</a>
+            </div>
+            <div class="card w-[260px] h-[600px] bg-[#005EFF] p-4 rounded-[10px] flex flex-col items-center">
+                <h3 class="text-white font-bold text-[20px]">Browsur</h3>
+                <img src="img/banner.jpg" alt="" class="w-[200px] h-[400px] object-cover rounded-[10px] mt-12">
+                <a href="" class="p-2 bg-[#FFA500] relative bottom-[-40px] rounded-[5px] items-center text-white">Pesan
+                    Jasa</a>
+            </div>
+            <div class="card w-[260px] h-[600px] bg-[#005EFF] p-4 rounded-[10px] flex flex-col items-center">
+                <h3 class="text-white font-bold text-[20px]">Banner</h3>
+                <img src="img/browsur.jpg" alt="" class="w-[200px] h-[400px] object-cover rounded-[10px] mt-12">
+                <a href="" class="p-2 bg-[#FFA500] relative bottom-[-40px] rounded-[5px] items-center text-white">Pesan
+                    Jasa</a>
+            </div>
+            <div class="card w-[260px] h-[600px] bg-[#005EFF] p-4 rounded-[10px] flex flex-col items-center">
+                <h3 class="text-white font-bold text-[20px]">Spanduk</h3>
+                <img src="img/banner.jpg" alt="" class="w-[200px] h-[400px] object-cover rounded-[10px] mt-12">
+                <a href="" class="p-2 bg-[#FFA500] relative bottom-[-40px] rounded-[5px] items-center text-white">Pesan
+                    Jasa</a>
+            </div>
+        </div>
+    </div>
+    <div id="testimoni" class="testimoni mx-auto flex flex-col items-center mt-10">
+        <h2 class="text-[30px] font-bold mb-4 text-wrap text-center mt-10">Apa Kata Mereka?</h2>
+        <p class="text-center w-[600px] mx-auto">Simak Kepuasan Mereka dengan Pelayanan Jasa Kami!</p>
+        <div class="grid grid-cols-4 gap-10 mt-10">
+            <div class="card bg-[#005EFF] p-4 rounded-[10px] w-[250px] h-[300px]">
+                <div class="content flex flex-col justify-between h-full">
+                    <div class="stars flex gap-1">
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="comment">
+                        <p class="text-white">"Pelayanan yang sangat memuaskan! Pro Media selalu
+                            siap membantu."</p>
+                    </div>
+                    <div class="nama">
+                        <p class="text-white">Ahmad Hambali</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-[#005EFF] p-4 rounded-[10px] w-[250px] h-[300px]">
+                <div class="content flex flex-col justify-between h-full">
+                    <div class="stars flex gap-1">
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="comment">
+                        <p class="text-white">"Pelayanan yang sangat memuaskan! Pro Media selalu
+                            siap membantu."</p>
+                    </div>
+                    <div class="nama">
+                        <p class="text-white">Ahmad Hambali</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-[#005EFF] p-4 rounded-[10px] w-[250px] h-[300px]">
+                <div class="content flex flex-col justify-between h-full">
+                    <div class="stars flex gap-1">
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="comment">
+                        <p class="text-white">"Pelayanan yang sangat memuaskan! Pro Media selalu
+                            siap membantu."</p>
+                    </div>
+                    <div class="nama">
+                        <p class="text-white">Ahmad Hambali</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-[#005EFF] p-4 rounded-[10px] w-[250px] h-[300px]">
+                <div class="content flex flex-col justify-between h-full">
+                    <div class="stars flex gap-1">
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                        <i class="fa fa-star text-yellow-500"></i>
+                    </div>
+                    <div class="comment">
+                        <p class="text-white">"Pelayanan yang sangat memuaskan! Pro Media selalu
+                            siap membantu."</p>
+                    </div>
+                    <div class="nama">
+                        <p class="text-white">Ahmad Hambali</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer bg-[#005EFF] text-white mt-10">
+        <div class="container mx-auto text-center py-4">
+            <p class="">© 2025 Pro Media. All rights reserved.</p>
+
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,61 @@
+<?php
+if(isset($_POST['username'])) {
+    include '../../database/koneksi.php';
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    $query = mysqli_query($koneksi, "SELECT * FROM pengguna WHERE username='$username' and password='$password'");
+    
+    if(mysqli_num_rows($query) > 0) {
+        $data = mysqli_fetch_array($query);
+        $_SESSION['username'] = $data;
+        echo "<script>alert('Selamat datang, " .$data['username']. "!'); window.location.href='dashboard.php';</script>";
+    }
+    else {
+        echo "<script>alert('Username atau password salah!');</script>";
+}
+
+};
+?>
+<!-- Link Konfigurasi Framework Tailwindcss -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- font awesome link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+</style>
+<div class="min-h-full bg-[#005EFF] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-8 w-[500px] h-[600px] text-white">
+        <form action="" method="POST" enctype="multipart/form-data" class="login mx-auto flex flex-col items-center">
+            <div class="icon text-white  text-[80px] mx-auto text-center"><i class="fa fa-user-circle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-6 text-center mt-2">Masuk</h2>
+            <div class="mb-4">
+                <input type="text" name="username" id="text" placeholder="Username" required
+                    class=" mt-1 w-[400px] h-[60px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-4">
+                <input type="password" name="password" id="password" placeholder="Kata Sandi" required
+                    class="mt-1 w-[400px] h-[60px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="flex items-center justify-between w-[400px]">
+                <div class="mb-4 flex items-center">
+                    <input type="checkbox" name="remember" id="remember"
+                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="remember" class="ml-2 text-sm text-white">Ingatkan Saya</label>
+                </div>
+                <div>
+                    <a href="#" class="text-sm font-medium text-white hover:underline">Lupa Kata Sandi?</a>
+                </div>
+            </div>
+            <button type="submit" name="masuk"
+                class="w-[400px] h-[60px] font-bold text-[20px] bg-[#FFA500] text-white px-4 py-2 rounded-[25px] mt-10  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer">
+                Masuk
+            </button>
+            <div class="mt-4 text-sm text-white">
+                Belum punya akun? <a href="#" class="text-white underline">Daftar</a>
+            </div>
+        </form>
+    </div>
+</div>

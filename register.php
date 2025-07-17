@@ -1,0 +1,65 @@
+<!-- Link Konfigurasi Framework Tailwindcss -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- font awesome link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+</style>
+<div class="min-h-full bg-[#005EFF] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-8 w-[500px] min-h-full text-white">
+        <?php
+if(isset($_POST['daftar']) && isset($_POST['username'])) {
+
+    include '../RPL/database/koneksi.php';
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $no_hp = $_POST['no_hp'];
+    $alamat = $_POST['alamat'];
+    $password = md5($_POST['password']);
+
+    // Insert into database
+    $query = "INSERT INTO pengguna VALUES ('$username', '$email', '$no_hp', '$alamat', '$password', NULL)";
+    $result = mysqli_query($koneksi, $query);
+    if ($result) {
+        echo "<div class='w-full text-white text-center mx-auto bg-[#FFA500] rounded-md p-2'>Akunmu udah berhasil di buat! <a href='login.php'></a></div>";
+    } else {
+        echo "<script>alert('Gagal membuat akun: " . mysqli_error($koneksi) . "');</script>";
+    }
+    }
+    ?>
+        <form action="" method="POST" enctype="multipart/form-data" class="login mx-auto flex flex-col items-center">
+            <div class="icon mt-4 text-white text-[80px] mx-auto text-center"><i class="fa fa-user-circle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-6 text-center mt-2">Daftarkan Akun Anda</h2>
+            <div class="mb-4">
+                <input type="text" name="username" id="username" placeholder="Username" required
+                    class="mt-1 w-[400px] h-[40px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" id="email" placeholder="Email" required
+                    class=" mt-1 w-[400px] h-[40px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-4">
+                <input type="number" name="no_hp" id="no_hp" placeholder="Nomor HP" required
+                    class="mt-1 w-[400px] h-[40px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-4">
+                <input type="text" name="alamat" id="alamat" placeholder="Alamat" required
+                    class="mt-1 w-[400px] h-[40px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-4">
+                <input type="password" name="password" id="password" placeholder="Kata Sandi" required
+                    class="mt-1 w-[400px] h-[40px] px-6 border border-gray-300 rounded-[25px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <button type="submit" name="daftar"
+                class="w-[400px] h-[60px] font-bold text-[20px] bg-[#FFA500] text-white px-4 py-2 rounded-[25px] mt-4  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer">
+                Daftar
+            </button>
+            <div class="mt-2 text-sm text-white">
+                Sudah Punya Akun? <a href="login.php" class="text-white underline">Masuk</a>
+            </div>
+        </form>
+    </div>
+</div>
